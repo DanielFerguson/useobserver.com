@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Endpoint extends Model
@@ -18,4 +19,14 @@ class Endpoint extends Model
         'base_url',
         'query_string',
     ];
+
+    public function full_url(): string
+    {
+        return $this->protocol . '://' . $this->base_url . $this->query_string;
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

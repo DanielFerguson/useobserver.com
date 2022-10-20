@@ -17,7 +17,9 @@ class EndpointFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'protocol' => 'https',
+            'base_url' => fake()->domainName(),
+            'query_string' => null,
         ];
     }
 }
