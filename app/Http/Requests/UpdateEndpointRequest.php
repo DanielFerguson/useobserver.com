@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Endpoint;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateEndpointRequest extends FormRequest
@@ -13,7 +14,9 @@ class UpdateEndpointRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        $endpoint = Endpoint::find($this->route('endpoint'));
+
+        return $this->user()->can('update', $endpoint);
     }
 
     /**
@@ -24,7 +27,9 @@ class UpdateEndpointRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'protocol' => 'required|in:http,https',
+            'base_url' => 'required|url',
+            'query_string' => 'nullable|string',
         ];
     }
 }

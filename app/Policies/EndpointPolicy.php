@@ -41,7 +41,6 @@ class EndpointPolicy
      */
     public function create(User $user)
     {
-        // TODO: Check their subscription level
         return count($user->endpoints) < 3;
     }
 

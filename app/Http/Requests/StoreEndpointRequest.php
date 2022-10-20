@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Endpoint;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEndpointRequest extends FormRequest
@@ -13,7 +14,7 @@ class StoreEndpointRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return $this->user()->can('create', Endpoint::class);
     }
 
     /**
@@ -24,7 +25,9 @@ class StoreEndpointRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'protocol' => 'required|in:http,https',
+            'base_url' => 'required|url',
+            'query_string' => 'nullable|string',
         ];
     }
 }

@@ -1,5 +1,9 @@
 # Observer
 
+## Roadmap
+
+- Ability to create a status page for an endpoint; display uptime and incident logs.
+
 ## Dictionary
 
 - Endpoint; a website or API endpoint to monitor.
@@ -45,3 +49,7 @@
 - A user who is part of a team can edit a shared endpoint
 - A user who is part of a team can soft delete a shared endpoint
 - A user who is part of a team can elect themselves to be notified for endpoint events
+
+- A user can create a status page for an endpoint.
+- A user can set a status page to public or private.
+- If a status page is set to private, it will not be accessible by outside users.
