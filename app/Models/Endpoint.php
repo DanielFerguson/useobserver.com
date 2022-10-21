@@ -20,6 +20,8 @@ class Endpoint extends Model
         'protocol',
         'base_url',
         'query_string',
+        'domain_expires_at',
+        'certificate_expires_at',
     ];
 
     public function fullUrl(): string

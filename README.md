@@ -6,14 +6,8 @@
 
 ## Scratchpad
 
-- MonitorWebsite
-    - SSL Certificate
-    - Up status
-    - Speed
-- MonitorDomain
-    - Expired status
-    - Expiry date
 - MonitorMailRecords
+    - https://github.com/spatie/dns
     - Exists
     - DKIM
     - SPF

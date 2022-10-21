@@ -2,25 +2,25 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\MonitorWebsite;
+use App\Jobs\MonitorCertificate;
 use App\Models\Endpoint;
 use Illuminate\Console\Command;
 
-class MonitorWebsites extends Command
+class MonitorCertificates extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'monitor:websites';
+    protected $signature = 'monitor:certificates';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create the necessarity jobs to monitor websites and add them to the queue.';
+    protected $description = 'Monitor the certificate statuses of endpoints.';
 
     /**
      * Execute the console command.
@@ -32,7 +32,7 @@ class MonitorWebsites extends Command
         $endpoints = Endpoint::all();
 
         foreach ($endpoints as $endpoint) {
-            MonitorWebsite::dispatch($endpoint);
+            MonitorCertificate::dispatch($endpoint);
         }
 
         return Command::SUCCESS;
