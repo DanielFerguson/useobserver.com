@@ -4,14 +4,6 @@
 
 - Ability to create a status page for an endpoint; display uptime and incident logs.
 
-## Scratchpad
-
-- MonitorMailRecords
-    - https://github.com/spatie/dns
-    - Exists
-    - DKIM
-    - SPF
-
 ## Dictionary
 
 - Endpoint; a website or API endpoint to monitor.
@@ -43,6 +35,9 @@
 - If an endpoints average speed declines by 50% for more than 5 minutes, a notification is sent
 - If a domain name is going to expire within 31 days, a notification is sent
 - If a notification is sent, it sends the notification to the users preferred methods
+
+- Logs are saved for up to a month before being purged
+- A user can download their logs
 
 ### Future
 
