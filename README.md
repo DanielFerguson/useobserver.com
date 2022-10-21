@@ -4,6 +4,20 @@
 
 - Ability to create a status page for an endpoint; display uptime and incident logs.
 
+## Scratchpad
+
+- MonitorWebsite
+    - SSL Certificate
+    - Up status
+    - Speed
+- MonitorDomain
+    - Expired status
+    - Expiry date
+- MonitorMailRecords
+    - Exists
+    - DKIM
+    - SPF
+
 ## Dictionary
 
 - Endpoint; a website or API endpoint to monitor.
