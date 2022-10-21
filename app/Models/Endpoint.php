@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Endpoint extends Model
 {
@@ -21,7 +22,7 @@ class Endpoint extends Model
         'query_string',
     ];
 
-    public function full_url(): string
+    public function fullUrl(): string
     {
         return $this->protocol . '://' . $this->base_url . $this->query_string;
     }
@@ -29,5 +30,10 @@ class Endpoint extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function speedReports(): HasMany
+    {
+        return $this->hasMany(SpeedReport::class);
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Endpoint;
+use App\Models\SpeedReport;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -19,7 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         User::factory(10)
-            ->has(Endpoint::factory()->count(3), 'endpoints')
+            ->has(Endpoint::factory()->has(SpeedReport::factory()->count(100))->count(3), 'endpoints')
             ->create();
     }
 }
